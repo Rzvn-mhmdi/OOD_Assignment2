@@ -12,6 +12,7 @@ public class Ticket {
         this.id = id;
         this.channel = channel;
         this.type = type;
+        this.state = new NewState();
     }
 
     public void applyProcess() {
