@@ -62,3 +62,13 @@
 - یک کلاس TicketFactoryمی سازیم به عنوان مرکز مدیریت عمل می‌کند و با بررسی درخواست کلاینت (نوع کانال)، تصمیم می‌گیرد مسئولیتِ نهاییِ ساخت را به کدام زیرکلاس واگذار کند.<br>
 - زیرکلاس‌های WebTicketFactory و EmailTicketFactory: هر کلاس مسئولیتِ نمونه‌سازیِ واقعیِ تیکت را بر عهده دارد.<br>
 - چاپ پیام‌های شناسایی (مانند Received from web/email) در Constructor زیرکلاس‌ها قرار گرفته است؛ بنابراین به محض انتخابِ کلاس توسط فکتوری، هویت آن اعلام می‌شود.
+
+
+
+
+# **بخش دوم: ترسیم Class Diagram**
+
+
+
+لینک تصویر Class Diagram:
+https://github.com/Rzvn-mhmdi/OOD_Assignment2/blob/ddf96e585da547454cdbfe05b0bb6c3debe2135b/ticket-class-diagram.png
