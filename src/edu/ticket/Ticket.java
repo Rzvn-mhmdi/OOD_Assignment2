@@ -1,60 +1,29 @@
 package edu.ticket;
 
 public class Ticket {
-    int id;
-    String status = "NEW";
-    String channel;
-    String type;
-    String request;
-    String response;
+    private int id;
+    private TicketState state;
+    private HandlingStrategy strategy;
+    private String channel;
+    private String type;
+    private String request;
 
-    public Ticket(int id,String channel, String type) {
+    public Ticket(int id, String channel, String type) {
         this.id = id;
         this.channel = channel;
         this.type = type;
+        this.state = new NewState();
     }
 
-    public String getStatus() {
-        return status;
+    public void applyProcess() {
+        state.handle(this);
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getRequest() {
-        return request;
-    }
-
-    public void setRequest(String request) {
-        this.request = request;
-    }
-
-    public String getResponse() {
-        return response;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
-    }
-
-    public int getId() {
-        return this.id;
-    }
+    public void setState(TicketState state) { this.state = state; }
+    public TicketState getState() { return state; }
+    public void setStrategy(HandlingStrategy strategy) { this.strategy = strategy; }
+    public HandlingStrategy getStrategy() { return strategy; }
+    public String getChannel() { return channel; }
+    public int getId() { return id; }
+    public void setRequest(String request) { this.request = request; }
 }
