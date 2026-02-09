@@ -72,4 +72,4 @@
 
 لینک تصویر Class Diagram:
 
-https://github.com/Rzvn-mhmdi/OOD_Assignment2/blob/ddf96e585da547454cdbfe05b0bb6c3debe2135b/ticket-class-diagram.png
+https://github.com/Rzvn-mhmdi/OOD_Assignment2/blob/17ed1289491ffe6d9517323c6012ae96670b86b3/ticket-class-diagram.png
