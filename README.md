@@ -73,3 +73,33 @@
 لینک تصویر Class Diagram:
 
 https://github.com/Rzvn-mhmdi/OOD_Assignment2/blob/17ed1289491ffe6d9517323c6012ae96670b86b3/ticket-class-diagram.png
+
+
+
+
+# **بخش سوم: اعمال الگو**
+
+
+
+۱. پیاده‌سازی الگوی طراحی وضعیت (State Pattern)
+
+برای مدیریت چرخه حیات تیکت، از اینترفیس TicketState و کلاس‌های پیاده‌ساز آن استفاده شده است:
+
+کد TicketState.java: تعریف یک قرارداد واحد برای تمام وضعیت‌ها با متد handle(Ticket ticket).
+
+کد NewState.java: مسئول چاپ پیام ایجاد تیکت و انتقال به وضعیت AssignedState.
+
+کد AssignedState.java: با استفاده از استراتژی تعیین شده، عمل تخصیص را انجام داده و به وضعیت InProgressState می‌رود.
+
+کد InProgressState.java: عملیات پاسخگویی را از طریق استراتژی اجرا کرده و تیکت را به ResolvedState منتقل می‌کند.
+
+کد ResolvedState.java: پیام Resolvede را چاپ می‌کند و تیکت را به ClosedState منتقل می‌کند. 
+
+کد ClosedState.java: مرحله نهایی که عملیات لاگ‌گیری پایان کار را انجام می‌دهد.
+
+
+۲. پیاده‌سازی الگوی طراحی استراتژی (Strategy Pattern)
+
+در کد قدیمی، نوع تیکت (مثلاً BUG) با شرط‌های ساده بررسی می‌شد.
+
+در کد جدید به جای اینکه تیکت بداند «چگونه» کارها را انجام دهد، یک شیء استراتژی (private HandlingStrategy strategy) را در خود نگه می‌دارد. متد setStrategy به فکتوری اجازه می‌دهد تا در لحظه ساخت، ابزار مناسب (مثلاً BugHandlingStrategy) را به تیکت تزریق کند و متد getStrategy به کلاس‌هایی مثل AssignedState اجازه می‌دهد تا بدون درگیر شدن با نوع تیکت، دستور assign() را از داخل آن استراتژی فراخوانی کنند.
